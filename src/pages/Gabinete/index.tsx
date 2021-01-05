@@ -21,7 +21,6 @@ import { Container, ButtonRegister } from './styles';
 // COMPONENTS
 import InputMask from '../../components/InputMask';
 import Input from '../../components/Input';
-import Select from '../../components/Select';
 import Notifications from '../../components/Notifications';
 
 // PAGES
@@ -42,15 +41,7 @@ const Gabinete: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
   const history = useHistory();
 
-  const [segmentos, setSegmentos] = useState();
   const [notifications, setNotifications] = useState();
-
-  const handleSelectSegmentos = useCallback(
-    (event: ChangeEvent<HTMLSelectElement>) => {
-      setSegmentos(event.target.value as any);
-    },
-    [],
-  );
 
   const handleSubmit = useCallback(
     async (data: FormDataProps) => {
